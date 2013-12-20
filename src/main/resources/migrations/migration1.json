@@ -1,0 +1,43 @@
+{
+    topic_types: [
+	{
+	    value: "Start date",
+	    uri: "cgc.calendar.start-date",
+	    data_type_uri: "dm4.core.number",
+	    index_mode_uris: ["dm4.core.key"]
+	},
+	{
+	    value: "End date",
+	    uri: "cgc.calendar.end-date",
+	    data_type_uri: "dm4.core.number",
+	    index_mode_uris: ["dm4.core.key"]
+	},
+	{
+	    value: "Event",
+	    uri: "cgc.calendar.event",
+	    data_type_uri: "dm4.core.composite",
+	    assoc_defs: [
+                {
+                    child_type_uri:        "cgc.calendar.start-date",
+                    child_cardinality_uri: "dm4.core.one",
+                    assoc_type_uri:        "dm4.core.composition_def"
+		},
+		
+		{
+                    child_type_uri:        "cgc.calendar.end-date",
+                    child_cardinality_uri: "dm4.core.one",
+                    assoc_type_uri:        "dm4.core.composition_def"
+		}       
+	    ],
+
+	    view_config_topics: [
+                {
+                    type_uri: "dm4.webclient.view_config",
+                    composite: {
+                        dm4.webclient.show_in_create_menu: true
+                    }
+                }
+	    ]
+	}
+    ]
+}
