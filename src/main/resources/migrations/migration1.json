@@ -2,13 +2,13 @@
     topic_types: [
 	{
 	    value: "Start date",
-	    uri: "cgc.calendar.start-date",
+	    uri: "cgc.calendar.start_date",
 	    data_type_uri: "dm4.core.number",
 	    index_mode_uris: ["dm4.core.key"]
 	},
 	{
 	    value: "End date",
-	    uri: "cgc.calendar.end-date",
+	    uri: "cgc.calendar.end_date",
 	    data_type_uri: "dm4.core.number",
 	    index_mode_uris: ["dm4.core.key"]
 	},
@@ -18,13 +18,13 @@
 	    data_type_uri: "dm4.core.composite",
 	    assoc_defs: [
                 {
-                    child_type_uri:        "cgc.calendar.start-date",
+                    child_type_uri:        "cgc.calendar.start_date",
                     child_cardinality_uri: "dm4.core.one",
                     assoc_type_uri:        "dm4.core.composition_def"
 		},
 		
 		{
-                    child_type_uri:        "cgc.calendar.end-date",
+                    child_type_uri:        "cgc.calendar.end_date",
                     child_cardinality_uri: "dm4.core.one",
                     assoc_type_uri:        "dm4.core.composition_def"
 		}       
