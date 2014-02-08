@@ -1,6 +1,18 @@
 {
     topic_types: [
 	{
+            value: "Title",
+            uri: "cgc.calendar.title",
+            data_type_uri: "dm4.core.text",
+            index_mode_uris: ["dm4.core.fulltext"]
+        },
+        {
+            value: "Text",
+            uri: "cgc.calendar.text",
+            data_type_uri: "dm4.core.html",
+            index_mode_uris: ["dm4.core.fulltext"]
+        },
+	{
 	    value: "Start date",
 	    uri: "cgc.calendar.start_date",
 	    data_type_uri: "dm4.core.number",
@@ -18,17 +30,31 @@
 	    data_type_uri: "dm4.core.composite",
 	    assoc_defs: [
                 {
+                    child_type_uri:        "cgc.calendar.title",
+                    child_cardinality_uri: "dm4.core.one",
+                    assoc_type_uri:        "dm4.core.composition_def"
+		},       
+		{
+                    child_type_uri:        "cgc.calendar.text",
+                    child_cardinality_uri: "dm4.core.one",
+                    assoc_type_uri:        "dm4.core.composition_def"
+		},       
+       		{
                     child_type_uri:        "cgc.calendar.start_date",
                     child_cardinality_uri: "dm4.core.one",
                     assoc_type_uri:        "dm4.core.composition_def"
 		},
-		
 		{
                     child_type_uri:        "cgc.calendar.end_date",
                     child_cardinality_uri: "dm4.core.one",
                     assoc_type_uri:        "dm4.core.composition_def"
-		}       
+		}
+		
 	    ],
+	    label_config: [
+                cgc.calendar.title,
+                cgc.calendar.text
+            ]
 
 	    view_config_topics: [
                 {
