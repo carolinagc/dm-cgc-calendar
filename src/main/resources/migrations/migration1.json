@@ -1,6 +1,6 @@
 {
     topic_types: [
-	{
+    	{
             value: "Title",
             uri: "cgc.calendar.title",
             data_type_uri: "dm4.core.text",
@@ -51,11 +51,6 @@
 		}
 		
 	    ],
-	    label_config: [
-                cgc.calendar.title,
-                cgc.calendar.text
-            ]
-
 	    view_config_topics: [
                 {
                     type_uri: "dm4.webclient.view_config",
